@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SHA256 Hashing Demo</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        margin: 0 auto;
+        width: 600px;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      }
+      h1,
+      h2 {
+        color: #333333;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"] {
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 2px solid #cccccc;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #4caf50;
+        color: #ffffff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SHA256 Hashing Demo</h1>
+      <p>Enter some text to hash:</p>
+      <label for="input">Input:</label>
+      <input type="text" id="input" />
+      <button onclick="hashInput()">Hash</button>
+      <p>The SHA256 hash of the input is:</p>
+      <p id="output"></p>
+    </div>
+    <script>
+      function hashInput() {
+        var input = document.getElementById("input").value;
+        var hash = sha256(input);
+        document.getElementById("output").innerHTML = hash;
+      }
+    </script>
+  </body>
+</html>
